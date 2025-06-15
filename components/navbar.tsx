@@ -1,12 +1,12 @@
 "use client";
-import Image from 'next/image'
+import { cn } from "@/lib/utils";
 import logo from "@/public/logo.jpg";
-import { useState, useEffect } from "react";
-import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Image from 'next/image';
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
-import { cn } from "@/lib/utils";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,6 +68,18 @@ const Navbar = () => {
             Events
           </Link>
           <Link
+            href="/gallery"
+            className="text-foreground/80 hover:text-primary transition-colors"
+          >
+            Gallery
+          </Link>
+          <Link
+            href="/news"
+            className="text-foreground/80 hover:text-primary transition-colors"
+          >
+            News & Updates
+          </Link>
+          <Link
             href="/contact"
             className="text-foreground/80 hover:text-primary transition-colors"
           >
@@ -126,6 +138,20 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Events
+            </Link>
+            <Link
+              href="/gallery"
+              className="py-2 text-foreground/80 hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Gallery
+            </Link>
+            <Link
+              href="/news"
+              className="py-2 text-foreground/80 hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              News & Updates
             </Link>
             <Link
               href="/contact"
